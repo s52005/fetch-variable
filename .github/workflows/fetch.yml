@@ -1,0 +1,20 @@
+name: Fetch App Version
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  fetch-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch APP_VERSION from API
+        id: fetch_version
+        run: |
+          APP_VERSION=$(curl -Ls https://dl.k8s.io/release/stable.txt)
+          echo "APP_VERSION=${APP_VERSION}" >> $GITHUB_ENV
+
+      - name: Use APP_VERSION
+        run: |
+          echo "The fetched APP_VERSION is $APP_VERSION"
