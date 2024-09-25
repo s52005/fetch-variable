@@ -13,8 +13,9 @@ jobs:
         id: fetch_version
         run: |
           APP_VERSION=$(curl -Ls https://dl.k8s.io/release/stable.txt)
-          #echo "APP_VERSION=${APP_VERSION}" >> $GITHUB_ENV
+          echo "APP_VERSION=${APP_VERSION}" >> $GITHUB_ENV
 
       - name: Use APP_VERSION
         run: |
-          echo "The fetched APP_VERSION is $APP_VERSION"
+          echo "The fetched APP_VERSION is $APP_VERSION \n"
+          echo "GITHUB_ENV contains $GITHUB_ENV"
