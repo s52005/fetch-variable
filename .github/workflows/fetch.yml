@@ -17,5 +17,5 @@ jobs:
 
       - name: Use APP_VERSION
         run: |
-          echo "The fetched APP_VERSION is $APP_VERSION \n"
-          echo "GITHUB_ENV contains $GITHUB_ENV"
+          echo "The fetched APP_VERSION is $APP_VERSION"
+          #echo "GITHUB_ENV contains $GITHUB_ENV"
